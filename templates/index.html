@@ -3,34 +3,62 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>CO2 Emission Predictor</title>
-  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  <title>COVID-19 Predictor</title>
+ <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 </head>
 
 <body>
- <div class="login">
-	<h1>Predict CO2 Emission of Vehicles</h1>
-     <h3> Enter the following values to predict the CO2 emission from the vehicle</h3>
+<nav class="navbar navbar-expand-sm bg-primary navbar-light">
+  <ul class="navbar-nav">
+    <li class="nav-item active">
+      <a class="nav-link" href="index.html">Diabetes Predictor</a>
+    </li>
 
-     <!-- Main Input For Receiving Query to our ML -->
-    <form action="{{ url_for('predict')}}"method="post">
-    	<input type="text" name="enginesize" placeholder="Engine Size" required="required" />
-        <input type="text" name="cylinders" placeholder="Cylinders" required="required" />
-		<input type="text" name="fuel" placeholder="Fuel" required="required" />
+  </ul>
+</nav>
 
-        <button type="submit" class="btn">Predict</button>
-    </form>
 
+  <br>
    <br>
+
+
+
+   <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name='Pregnancies' placeholder="Pregnancies" required="required" />
+        <input type="text" name="Glucose" placeholder="Glucose" required="required" />
+		<input type="text" name="BloodPressure" placeholder="BloodPressure" required="required" />
+        <input type="text" name="SkinThickness" placeholder="kinThickness" required="required" />
+        <input type="text" name="Insulin" placeholder="Insulin" required="required" />
+		<input type="text" name="BMI" placeholder="BMI" required="required" />
+
+        <input type="text" name="DiabetesPedigreeFunction" placeholder="DiabetesPedigreeFunction" required="required" />
+		<input type="text" name="Age" placeholder="Age" required="required" />
+<br>
+       <br>
+      <button type="submit" class="btn btn-success btn-block btn-large">Predict</button>
+
+   </form>
+       <br>
    <br>
    {{ prediction_text }}
 
- </div>
+</div>
+
+
+
+
+
 
 
 </body>
